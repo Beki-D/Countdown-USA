@@ -18,16 +18,16 @@
         x = setInterval(function() {    
   
           const now = new Date().getTime(),
-                distance = countDown - now;
+                timeDifference = countDown - now;
   
-          document.getElementById("days").innerText = Math.floor(distance / (day)),
-            document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
-            document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
-            document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+          document.getElementById("days").innerText = Math.floor(timeDifference / (day)),
+            document.getElementById("hours").innerText = Math.floor((timeDifference % (day)) / (hour)),
+            document.getElementById("minutes").innerText = Math.floor((timeDifference % (hour)) / (minute)),
+            document.getElementById("seconds").innerText = Math.floor((timeDifference % (minute)) / second);
   
           //do something later when date is reached
-          if (distance < 0) {
-            document.getElementById("headline").innerText = "It's my birthday!";
+          if (timeDifference < 0) {
+            document.getElementById("headline").innerText = "Time is up! You had better applied.";
             document.getElementById("countdown").style.display = "none";
             document.getElementById("content").style.display = "block";
             clearInterval(x);
